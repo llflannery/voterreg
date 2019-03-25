@@ -5,7 +5,7 @@ from django.core.management.base import BaseCommand
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
-        print "Loading CSV"
+        print("Loading CSV")
         csv_path = "./VoterList0319.csv"
         csv_file = open(csv_path, 'rb')
         csv_reader = csv.DictReader(csv_file)
@@ -36,4 +36,4 @@ class Command(BaseCommand):
                 countyvoterid=row['County Voter ID'],
                 idrequired=row['ID Required']
             )
-            print obj
+            print(obj)
