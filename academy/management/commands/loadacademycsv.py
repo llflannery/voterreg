@@ -7,7 +7,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         print("Loading CSV")
         csv_path = "./VoterList0319.csv"
-        csv_file = open(csv_path, 'rb')
+        csv_file = open(csv_path, 'rt')
         csv_reader = csv.DictReader(csv_file)
         for row in csv_reader:
             obj = Invite.objects.create(
